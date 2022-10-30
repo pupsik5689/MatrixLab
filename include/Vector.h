@@ -26,8 +26,8 @@ public:
 	T& operator[](size_t ind);
 	const T& operator[](size_t ind) const;
 
-	T& at(size_t ind);
-	const T& at(size_t ind) const;
+	T& At(size_t ind);
+	const T& At(size_t ind) const;
 
 	bool operator==(const TDynamicVector<T>& v) const noexcept;
 	bool operator!=(const TDynamicVector<T>& v) const noexcept;
@@ -192,7 +192,7 @@ inline const T& TDynamicVector<T>::operator[](size_t ind) const
 }
 
 template<typename T>
-inline T& TDynamicVector<T>::at(size_t ind)
+inline T& TDynamicVector<T>::At(size_t ind)
 {
 	if (pMem == nullptr)
 		throw "Error";
@@ -206,7 +206,7 @@ inline T& TDynamicVector<T>::at(size_t ind)
 }
 
 template<typename T>
-inline const T& TDynamicVector<T>::at(size_t ind) const
+inline const T& TDynamicVector<T>::At(size_t ind) const
 {
 	if (pMem == nullptr)
 		throw "Error";
