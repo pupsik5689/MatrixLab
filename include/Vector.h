@@ -104,6 +104,9 @@ inline TDynamicVector<T>::TDynamicVector(const TDynamicVector<T>& v)
 template<typename T>
 inline TDynamicVector<T>::TDynamicVector(TDynamicVector<T>&& v) noexcept
 {
+	if ((v.sz == 0) || (v.pMem == nullptr) || (*this == v))
+		throw "Error";
+	
 	sz = v.sz;
 	pMem = v.pMem;
 	v.sz = 0;
